@@ -6,14 +6,14 @@ public class IterativePreorderTraversal() {
     // preorderedList. Return this list.
 
     public ArrayList<Integer> preorderItr(TreeNode root) {
-        ArrayList<Integer> al = new ArrayList<Integer>();
-        if (root == null) { return al; }
+        ArrayList<Integer> preorderedList = new ArrayList<Integer>();
+        if (root == null) { return preorderedList; }
         Stack<TreeNode> nodeStack = new Stack<TreeNode>();
         nodeStack.push(root);
         
         while (!nodeStack.empty()) {
             TreeNode mynode = nodeStack.peek();
-            al.add(nodeStack.pop().data);
+            preorderedList.add(nodeStack.pop().data);
             
             if (mynode.right != null) { 
                 nodeStack.push(mynode.right); 
@@ -22,6 +22,6 @@ public class IterativePreorderTraversal() {
                 nodeStack.push(mynode.left); 
             } 
         }
-        return al;   
+        return preorderedList;   
     }
 }
